@@ -19,6 +19,6 @@ composer
 
 7. After that open command prompt and type the following below
 
-8. php artisan serve then goto your browser, type localhost:8000
+8. php artisan serve then goto your browser, type http://localhost:8000
 
 9. For users onboarding signup and for administrator, Email: admin@temper.com, Password: 12345678
