@@ -13,12 +13,12 @@ composer
 
 4. create a database called temper, after creation of the database
 
-5. click on import, it will show a file upload format then browse the path of the database which is located inside the root directory of the project inside db folder. The name is temper.sql
+5. click on import, it will show a file upload format then browse the path of the database, it is located inside the root directory of the project inside db folder. The name is temper.sql
 
-6. After successfull import of the database then put the project folder into this directory, if you're using Window OS and wamp respectively (c:/wamp/www/) and if it is Window OS and xampp (c:/xampp/htdocs/).
+6. After successful import of the database then put the project folder into the following directory, for Window OS and wamp respectively (c:/wamp/www/) and for Window OS and xampp (c:/xampp/htdocs/).
 
 7. After that open command prompt and type the following below
 
-8. php artisan serve then you're good to go.
+8. php artisan serve then goto your browser, type localhost:8000
 
-9. For users onboarding signup but for administrator Email: admin@temper.com, Password: 12345678
+9. For users onboarding signup and for administrator, Email: admin@temper.com, Password: 12345678

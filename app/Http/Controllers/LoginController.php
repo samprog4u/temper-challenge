@@ -95,6 +95,11 @@ class LoginController extends MYController
                         \Session::put('user', $res);
                         return redirect('/auth/completed');
                     }
+                    else if($res->status == 8 && $res->group_id != 1)
+                    {
+                        \Session::put('user', $res);
+                        return redirect('/auth/complete_approve');
+                    }
                 }
                 else
                 {

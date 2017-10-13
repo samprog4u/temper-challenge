@@ -15,26 +15,16 @@ class Welcome extends Model
         return $result;
     }
 
-    public function ListSearchAccount($str)
+    public function getUsers()
     {
-    	$result = DB::table('admin_basic_info')
-    	->where('account_id', 'like', '%' . $str . '%')
-    	->orwhere('account_name', 'like', '%' . $str . '%')
-    	->orwhere('account_type', 'like', '%' . $str . '%')
-    	->orwhere('created_at', 'like', '%' . $str . '%')
-    	->orderBy('id', 'asc')
-    	->get();
-      	return $result;
-    }
-
-    public function ListViews($str)
-    {
-    	$account_id = DB::table('admin_basic_info')->where('id',$str)->value('account_id');
-    	$row1 = DB::table('admin_basic_info')->where('account_id',$account_id)->first();
-    	$row2 = DB::table('admin_handle')->where('account_id',$account_id)->first();
-    	$row3 = DB::table('technical_handle')->where('account_id',$account_id)->first();
-        $row4 = $this->FetchStatesById($row2->state);
-        $row5 = $this->FetchStatesById($row3->state);
-    	return array($row1, $row2, $row3, $row4, $row5);
+        $row = DB::table('users')->where('group_id', '2')->get();
+        if($row)
+        {
+            return $row;
+        }
+        else
+        {
+            return false;
+        }
     }
 }

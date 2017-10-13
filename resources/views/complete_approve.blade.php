@@ -47,21 +47,9 @@
             <div class="col-lg-6 bg-white">
               <div class="form d-flex align-items-center">
                 <div class="content">
-                  <p class="custom_error">{{$errors->first('email')}}</p>
-                  <p class="custom_error">{{$errors->first('password')}}</p>
-                  <p class="custom_error" align="center"><?php echo Session::get('error'); ?></p>
-                  <form id="login-form" action="{{action('LoginController@login')}}" method="post">
-                    <div class="form-group">
-                      <input id="email" type="text" name="email" required="" class="input-material">
-                      <label for="email" class="label-material">{{ trans('app_lang.email') }}</label>
-                      <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                    </div>
-                    <div class="form-group">
-                      <input id="password" type="password" name="password" required="" class="input-material">
-                      <label for="password" class="label-material">{{ trans('app_lang.password') }}</label>
-                    </div><input id="login" type="submit" value="Login" class="btn btn-primary">
-                    <!-- This should be submit button but I replaced it with <a> for demo purposes-->
-                  </form><!-- <a href="#" class="forgot-pass">{{ trans('app_lang.forgot_password') }}?</a> --><br><small>{{ trans('app_lang.dont_have_account') }}? </small><a href="/auth/signup" class="signup">{{ trans('app_lang.signup') }}</a>
+                  <p class="custom_success" align="center">{{ trans('app_lang.finish_congrate') }}</p>
+                  <medium>{{ trans('app_lang.proceed_home') }} </medium>
+                  <a href="/" class="signup">{{ trans('app_lang.home') }}</a>
                 </div>
               </div>
             </div>

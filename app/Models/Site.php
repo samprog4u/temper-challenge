@@ -109,4 +109,29 @@ class Site extends Model
         $i = DB::table('tracks')->where('user_id',$id)->update($data);
         return $i;
     }
+
+    public function ApproveUser($id, $data1, $data2)
+    {
+        $i = DB::table('tracks')->where('user_id', $id)->update($data1);
+        $j = DB::table('users')->where('id', $id)->update($data2);
+        if($i && $j)
+        {
+            return true;
+        }
+
+        return false;
+    }
+
+    public function getStages()
+    {
+        $row = DB::table('stages')->get();
+        if($row)
+        {
+            return $row;
+        }
+        else
+        {
+            return false;
+        }
+    }
 }

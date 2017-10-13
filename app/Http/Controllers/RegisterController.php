@@ -50,7 +50,7 @@ class RegisterController extends MYController
 
     function freelance()
     {
-        if(!session()->get('user') || !session()->get('pick_job'))
+        if(!session()->get('user'))
         {
             \Session::flash('error','<strong>Error:</strong>!<br />' . trans('app_lang.access_denied'));
             return redirect('/auth/login');
@@ -60,7 +60,7 @@ class RegisterController extends MYController
 
     function approval()
     {
-        if(!session()->get('user') || !session()->get('pick_job'))
+        if(!session()->get('user'))
         {
             \Session::flash('error','<strong>Error:</strong>!<br />' . trans('app_lang.access_denied'));
             return redirect('/auth/login');
@@ -70,12 +70,22 @@ class RegisterController extends MYController
 
     function completed()
     {
-        if(!session()->get('user') || !session()->get('pick_job'))
+        if(!session()->get('user'))
         {
             \Session::flash('error','<strong>Error:</strong>!<br />' . trans('app_lang.access_denied'));
             return redirect('/auth/login');
         }
         return view('completed');
+    }
+
+    function complete_approve()
+    {
+        if(!session()->get('user'))
+        {
+            \Session::flash('error','<strong>Error:</strong>!<br />' . trans('app_lang.access_denied'));
+            return redirect('/auth/login');
+        }
+        return view('complete_approve');
     }
 
     function activate($code = NULL)
@@ -177,7 +187,7 @@ class RegisterController extends MYController
                     $this->site->TrackStages($sData);
                     $subj = trans('app_lang.account_creation');
                     $msg = trans('app_lang.mail_text') . url('/') . "/activate/" . $activation_code;
-                    $this->site->Send_Mail($email, $msg, $subj);
+                    //$this->site->Send_Mail($email, $msg, $subj);
 
                     \Session::flash('message','<strong>Success:</strong>!<br />' . trans('app_lang.account_success'));
                     return redirect('/auth/signup');

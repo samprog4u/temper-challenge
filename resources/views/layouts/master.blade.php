@@ -43,7 +43,7 @@
               <!-- Navbar Header-->
               <div class="navbar-header">
                 <!-- Navbar Brand --><a href="index.html" class="navbar-brand">
-                  <div class="brand-text brand-big hidden-lg-down"><span>Temper </span><strong>Dashboard</strong></div>
+                  <div class="brand-text brand-big hidden-lg-down"><span>{{ trans('app_lang.sender') }} </span><strong>{{ trans('app_lang.dashboard') }}</strong></div>
                   <div class="brand-text brand-small"><strong>TD</strong></div></a>
                 <!-- Toggle Button--><a id="toggle-btn" href="welcome" class="menu-btn active"><span></span><span></span><span></span></a>
               </div>
@@ -64,14 +64,14 @@
           <div class="sidebar-header d-flex align-items-center">
             <div class="avatar"><img src="{{asset('assets/img/avatar-1.jpg')}}" alt="..." class="img-fluid rounded-circle"></div>
             <div class="title">
-              <h1 class="h4">Temper Admin</h1>
-              <p>Web Developer</p>
+              <h1 class="h4">{{ trans('app_lang.sender') }} {{ trans('app_lang.admin') }}</h1>
+              <p>{{ trans('app_lang.developer') }}</p>
             </div>
           </div>
-          <!-- Sidebar Navidation Menus--><span class="heading">Main</span>
+          <!-- Sidebar Navidation Menus--><span class="heading">{{ trans('app_lang.main') }}</span>
           <ul class="list-unstyled">
-            <li class="active"> <a href="welcome"><i class="icon-home"></i>Home</a></li>
-            <li> <a href=""> <i class="icon-user"></i>Approve Users</a></li>
+            <li class=""> <a href="welcome"><i class="icon-home"></i>{{ trans('app_lang.home') }}</a></li>
+            <li> <a href="users"> <i class="icon-user"></i>{{ trans('app_lang.approve_users') }}</a></li>
           </ul>
         </nav>
         <div class="content-inner">
